@@ -1,0 +1,34 @@
+.title {
+    color: var(--Grey-0);
+    font-size: 1.1421rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.75rem;
+
+    &.Two{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+};
+
+.Headline{
+    color: var(--Grey-0);
+    font-size: 0.7614rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;  
+
+    &.HeadlineBold{
+        color: var(--Grey-1);
+        font-size: 0.7801rem;
+        font-style: normal;
+        font-weight: 600;
+    }
+};
+
+.Paragraph{
+    color: var(--Grey-0);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+};

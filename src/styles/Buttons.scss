@@ -1,0 +1,41 @@
+.btn {
+    color: var(--Grey-0);
+    display: inline-flex;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0rem 1.3959rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6345rem;
+
+    border-radius: 0.2538rem;
+    border: 0.0761rem solid var(--Color-primary);
+    background: var(--Color-primary);
+
+    &:hover {
+        background: var(--Color-primary-Focus);
+    }
+
+    &.negative {
+        background: var(--Color-primary-Negative);
+    }
+};
+
+.btn2 {
+    color: var(--Grey-0);
+    display: inline-flex;
+    height: 2.5rem;
+    padding: 0rem 1.3959rem;
+    justify-content: center;
+    align-items: center;
+    gap: 10.152px;
+
+    border-radius: 0.25rem;
+    border: 0.0761rem solid var(--Grey-1);
+    background: var(--Grey-1);
+
+
+    &:hover{
+        background: var(--Grey-2);
+    }
+};

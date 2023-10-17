@@ -1,0 +1,37 @@
+.loginPageBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5.0625rem 0.75rem 3.1822rem 0.75rem;
+    gap: 19.393px;
+  
+    img {
+      margin-bottom: 1.2119rem;
+    }
+    h2 {
+
+      align-self: center;
+      margin-bottom: 0.3125rem;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 2.2932rem 1.103rem;
+      gap: 17.648px;
+      background-color: var(--Grey-3);
+    }
+  
+    p {
+      color: var(--Grey-1);
+      align-self: center;
+    }
+    
+    @media (min-width: 1024px) {
+      margin-top: 4.8331rem;
+      margin-bottom: 5.3125rem;
+    }
+  }
+  
+  

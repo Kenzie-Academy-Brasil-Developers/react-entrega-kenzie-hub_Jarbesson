@@ -1,0 +1,37 @@
+.input_box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.625rem;
+   
+ 
+
+    input {
+        display: flex;
+        width: 19.4375rem;
+        height: 2.5rem;
+        padding: 0rem 1.0152rem;
+        align-items: center;
+        gap: 0.6345rem;
+
+       
+        background-color: var(--Grey-2);
+        color:var(--Grey-1) ;
+        border-radius: 0.3125rem;
+        
+    }
+
+    label {
+        color: var(--grey-0, #F8F9FA);
+        font-size: 0.7614rem;
+        font-style: normal;
+        font-weight: 400;
+        position: relative;
+    }
+}
+
+.error{
+    color: rgba(236, 183, 9, 0.829);
+    margin-top: 0.3125rem;
+}
+
