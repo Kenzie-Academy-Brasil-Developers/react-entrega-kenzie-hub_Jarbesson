@@ -7,6 +7,7 @@ export const DashboardPage = ({ user, userLogout }) => {
             <Header userLogout={userLogout} />
             <main className={style.mainBox}>
                 <div>
+
                     <hr />
                     <div className={style.divUser} >
                         <h2 className="style.titleName title">{user?.name}</h2>
@@ -19,6 +20,5 @@ export const DashboardPage = ({ user, userLogout }) => {
                 </div>
             </main>
         </>
-
     )
 };

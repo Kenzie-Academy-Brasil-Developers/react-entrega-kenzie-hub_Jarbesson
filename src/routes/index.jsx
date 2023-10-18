@@ -15,6 +15,7 @@ export const RoutesMain = () =>{
         setUser(null);
         navigate("/");
     }
+    
     return(
         <Routes>
             <Route path="/" element={<LoginPage setUser={setUser}/>}/>

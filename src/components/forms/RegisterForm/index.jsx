@@ -28,7 +28,7 @@ export const RegisterForm = () => {
             toast.success("conta criada com sucesso");
             navigate("/");
         } catch (error) {
-            console.log(error);
+            
             if (error.response?.data === "Email already exists") {
                 toast.error("Usuário já cadastrado tente novamente!");
             }
@@ -39,7 +39,7 @@ export const RegisterForm = () => {
 
     const submit = (payload) => {
         registerUser(payload);
-        console.log(payload);
+       
     };
 
     return (

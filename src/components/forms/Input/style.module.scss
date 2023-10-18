@@ -3,8 +3,6 @@
     flex-direction: column;
     gap: 0.25rem;
     margin-top: 0.625rem;
-   
- 
 
     input {
         display: flex;
@@ -14,11 +12,11 @@
         align-items: center;
         gap: 0.6345rem;
 
-       
+
         background-color: var(--Grey-2);
-        color:var(--Grey-1) ;
+        color: var(--Grey-1);
         border-radius: 0.3125rem;
-        
+
     }
 
     label {
@@ -30,8 +28,11 @@
     }
 }
 
-.error{
+;
+
+.error {
     color: rgba(236, 183, 9, 0.829);
     margin-top: 0.3125rem;
 }
 
+;

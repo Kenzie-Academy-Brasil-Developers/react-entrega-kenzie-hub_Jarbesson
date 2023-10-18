@@ -1,10 +1,8 @@
-
 import { RoutesMain } from "./routes";
 import "./styles/index.scss";
 import { ToastContainer } from 'react-toastify';
 
 function App() {
-
 
   return (
     <>
