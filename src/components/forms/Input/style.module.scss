@@ -11,12 +11,12 @@
         padding: 0rem 1.0152rem;
         align-items: center;
         gap: 0.6345rem;
-
+        margin-top: 0.3125rem;
 
         background-color: var(--Grey-2);
+        border: none;
         color: var(--Grey-1);
         border-radius: 0.3125rem;
-
     }
 
     label {
@@ -26,13 +26,10 @@
         font-weight: 400;
         position: relative;
     }
-}
-
-;
+};
 
 .error {
     color: rgba(236, 183, 9, 0.829);
     margin-top: 0.3125rem;
-}
+};
 
-;

@@ -2,39 +2,24 @@ import { useForm } from "react-hook-form";
 import { Inputs } from "../Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginFormSchema } from "./loginForm.schema";
-import { api } from "../../../services/api";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import { useState } from "react";
 import Logo from"../../../assets/Logo.svg";
 import style from "./style.module.scss";
-import { toast } from "react-toastify";
+import { UserContext } from "../../../providers/UserContext";
+import { useContext } from "react";
 
-export const LoginForm = ({setUser}) => {
+
+export const LoginForm = () => {
     const { register, handleSubmit, formState: { errors }, } = useForm({
         resolver: zodResolver(loginFormSchema),
     });
 
     const [loading, setLoading] = useState(false);
-
-    const navigate = useNavigate();
-
-    const userLogin = async (payload) => {
-        try {
-            setLoading(true)
-            const { data } = await api.post("/sessions", payload);
-            localStorage.setItem("@TOKEN", data.token);
-            setUser(data.user);
-            navigate("/dashboard");
-            toast.success("Login feito com sucesso");
-        } catch (error) {
-              toast.error("Credências invalida tente novamente!");
-        } finally {
-            setLoading(false);
-        }
-    };
+    const {userLogin} = useContext(UserContext)
 
     const submit = (payload) => {
-        userLogin(payload);
+        userLogin(payload, setLoading);
     };
 
     return (

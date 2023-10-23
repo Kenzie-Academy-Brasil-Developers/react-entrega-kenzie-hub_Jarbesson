@@ -3,13 +3,13 @@ import { Inputs } from "../Input";
 import { Select } from "../Select";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerForm.schema";
-import { api } from "../../../services/api";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { useState } from "react";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 import Logo from "../../../assets/Logo.svg";
 import style from "./style.module.scss";
-import { toast } from "react-toastify";
+import { useContext } from "react";
+import { UserContext } from "../../../providers/UserContext";
 
 export const RegisterForm = () => {
     const { register, handleSubmit, formState: { errors, } } = useForm({
@@ -18,28 +18,11 @@ export const RegisterForm = () => {
 
     const [loading, setLoading] = useState(false);
     const [isHidden, setIsHidden] = useState(true);
-
-    const navigate = useNavigate();
-
-    const registerUser = async (payload) => {
-        try {
-            setLoading(true);
-            await api.post("/users", payload);
-            toast.success("conta criada com sucesso");
-            navigate("/");
-        } catch (error) {
-            
-            if (error.response?.data === "Email already exists") {
-                toast.error("Usuário já cadastrado tente novamente!");
-            }
-        } finally {
-            setLoading(false);
-        }
-    };
+    const { registerUser } = useContext(UserContext);
 
     const submit = (payload) => {
-        registerUser(payload);
-       
+        registerUser(payload, setLoading);
+
     };
 
     return (
@@ -73,7 +56,7 @@ export const RegisterForm = () => {
                         type={isHidden ? "password" : "text"}
                         error={errors.password}
                         {...register("password")}>
-                              <button className={style.buttonVisibility} onClick={() => setIsHidden(!isHidden)}>{isHidden ? <MdVisibilityOff size={30} /> : <MdVisibility size={30} />}</button>
+                        <button className={style.buttonVisibility} onClick={() => setIsHidden(!isHidden)}>{isHidden ? <MdVisibilityOff size={30} /> : <MdVisibility size={30} />}</button>
                     </Inputs>
 
                     <Inputs

@@ -1,11 +1,11 @@
 import { LoginForm } from "../../components/forms/LoginForm";
 
-export const LoginPage = ({setUser}) => {
+export const LoginPage = () => {
     return (
         <main >
             <div>
                 <div>
-                 <LoginForm setUser={setUser}/>
+                 <LoginForm/>
                 </div>
             </div>
         </main>

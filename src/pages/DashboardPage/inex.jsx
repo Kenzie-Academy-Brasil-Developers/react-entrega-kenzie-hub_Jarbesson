@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import { Header } from "../../components/Header";
 import style from "./style.module.scss";
+import { UserContext } from "../../providers/UserContext";
 
-export const DashboardPage = ({ user, userLogout }) => {
+export const DashboardPage = () => {
+    const {user} = useContext(UserContext);
+
     return (
         <>
-            <Header userLogout={userLogout} />
+            <Header/>
             <main className={style.mainBox}>
                 <div>
 
