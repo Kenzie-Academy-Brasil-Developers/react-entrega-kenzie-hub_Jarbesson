@@ -27,7 +27,7 @@ export const UserContext = createContext({});
                 setUser(data);
                 navigate(pathname)
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }finally{
                 setLoading(false)
             }
