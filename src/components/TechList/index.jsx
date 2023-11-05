@@ -3,27 +3,30 @@ import { TechContext } from "../../providers/TechContext";
 import { TechCard } from "./TechCard";
 import { CreateTechModal } from "../Modal/CreateTechModal";
 import { EditTech } from "../Modal/EditTechModal";
-import {BiPlus} from"react-icons/bi";
+import { BiPlus } from "react-icons/bi";
 import style from "./style.module.scss";
 
 export const Techlist = () => {
 
-    const { techList,editingPost,visibleModal,setVisibleModal } = useContext(TechContext)
-   
+    const { techList, editingPost, visibleModal, setVisibleModal } = useContext(TechContext)
+
+    const showModal = () => {
+        setVisibleModal(true)
+    }
+console.log(techList, 'techList');
     return (
         <div>
             <div className={style.div_second}>
                 <h1 className="title tow">Tecnologias</h1>
-                {visibleModal ? <CreateTechModal/> : null}
-                <button className="title tow" onClick={() =>setVisibleModal(true)}><BiPlus/></button>
+                {visibleModal ? <CreateTechModal /> : null}
+                <button className="title tow" onClick={showModal}><BiPlus /></button>
             </div>
-                {editingPost ? <EditTech/> : null}
+            {editingPost ? <EditTech /> : null}
             <div >
                 <ul className={style.ul_list}>
-                    {techList.map(tech => {
-                        const { id, title, status } = tech;
+                    {techList.map((tech) => {
                         return (
-                            <TechCard key={id} title={title} status={status} tech={tech}/>
+                            <TechCard key={tech.id} tech={tech} />
                         )
                     })}
                 </ul>

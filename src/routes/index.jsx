@@ -3,6 +3,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { DashboardPage } from "../pages/DashboardPage/inex";
 import { PriveteRoutes } from "./PriveteRoutes";
+import { TechProvider } from "../providers/TechContext";
 
 export const RoutesMain = () => {
     return (
@@ -11,7 +12,7 @@ export const RoutesMain = () => {
             <Route path="/register" element={<RegisterPage />} />
           
             <Route element={<PriveteRoutes />}>
-                <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/dashboard" element={ <TechProvider><DashboardPage /></TechProvider>} />
             </Route>
         </Routes>
     )
